@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ƎL BIMBO | Eliah Angelica S. Calumpong</title>
+    <meta name="google-site-verification" content="rUCGLL_jEW_dPC0rJYKjieHRBxCGNC97dGKETgcgTP0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Vintage Billboard & Modern Tech feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --eheads-yellow: #facc15;
+            --eheads-red: #ef4444;
+            --eheads-dark: #121212;
+            --eheads-card: #1e1e1e;
+        }
+
+        body {
+            background-color: var(--eheads-dark);
+            color: #f3f4f6;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-eheads {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Mirrored / Inverted 'E' effect */
+        .mirror-e {
+            display: inline-block;
+            transform: scaleX(-1);
+        }
+
+        /* Glitch & Developer Neon Text */
+        .glow-yellow {
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.6);
+        }
+        .glow-cyan {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+        }
+
+        /* Vintage Album Box Border */
+        .album-border {
+            border: 4px solid var(--eheads-yellow);
+            box-shadow: 8px 8px 0px var(--eheads-red);
+        }
+
+        .album-card {
+            background-color: var(--eheads-card);
+            border: 2px solid var(--eheads-yellow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .album-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 6px 6px 0px var(--eheads-yellow);
+        }
+
+        /* Progress bar animation */
+        @keyframes playPulse {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .playing-bar {
+            animation: playPulse 180s linear infinite;
+        }
+    </style>
+</head>
+<body class="selection:bg-yellow-400 selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b-2 border-yellow-400">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-eheads font-bold text-yellow-400 tracking-wider">
+                <span class="mirror-e">E</span>L BIMBO
+            </a>
+            <div class="space-x-6 text-sm font-semibold">
+                <a href="#about" class="hover:text-yellow-400 transition">HOME</a>
+                <a href="#projects" class="hover:text-yellow-400 transition">TRACKS (PROJECTS)</a>
+                <a href="#skills" class="hover:text-yellow-400 transition">SKILLS</a>
+                <a href="#contact-info" class="px-4 py-2 bg-yellow-400 text-black rounded-none font-bold hover:bg-red-500 hover:text-white transition shadow-[3px_3px_0px_#fff]">BOOK NOW</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+
+        <!-- HERO SECTION (EHEADS ALBUM STYLE) -->
+        <section id="about" class="pt-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Banner Title -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Band Logo Style -->
+                    <div class="inline-block bg-yellow-400 text-black font-eheads px-4 py-1 text-xl font-bold tracking-widest border-2 border-white">
+                        THE FIRST <span class="mirror-e">E</span>L BIMBO
+                    </div>
+
+                    <h1 class="text-5xl sm:text-7xl font-eheads font-extrabold text-white leading-none">
+                        CALL M<span class="mirror-e">E</span> <span class="text-yellow-400 glow-yellow">EL BIMBO</span>
+                    </h1>
+
+                    <p class="text-red-400 font-mono text-lg font-bold">
+                        &gt; "Kamukha mo si Paraluman... pero mas sanay ako sa Code." ⚡
+                    </p>
+
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        I am <span class="text-yellow-400 font-semibold">Eliah Angelica S. Calumpong</span>, a BSIT Student & Web Developer crafting modern digital experiences with a rockstar aesthetic. Turning complex logic into seamless interactive tracks.
+                    </p>
+
+                    <!-- Interactive Music Player Widget -->
+                    <div class="bg-black border-2 border-yellow-400 p-4 shadow-[5px_5px_0px_#ef4444] space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-yellow-400">
+                            <span id="player-status"><span>▶</span> NOW PLAYING: Track 01 - Portfolio.exe</span>
+                            <!-- DURATION SET TO BIRTHDAY FORMAT e.g. 10:17 (October 17) -->
+                            <span class="text-red-400 font-bold">0:00 / 10:17</span>
+                        </div>
+                        
+                        <div class="w-full bg-gray-800 h-3 border border-yellow-400 overflow-hidden relative">
+                            <div id="progress-bar" class="bg-yellow-400 h-full w-0"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-1">
+                            <button id="play-btn" onclick="togglePlay()" class="px-4 py-1 bg-yellow-400 text-black font-eheads font-bold text-sm hover:bg-white transition">
+                                ▶ PLAY ALBUM
+                            </button>
+                            <span class="text-xs text-gray-400 font-mono">Bday Duration Mode</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://liarazon17-tech.github.io/Resume/" target="_blank" class="inline-block px-8 py-3 bg-red-600 text-white font-eheads text-xl tracking-wider hover:bg-yellow-400 hover:text-black transition duration-300 border-2 border-white shadow-[4px_4px_0px_#facc15]">
+                            VIEW FULL RESUME ↵
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Photo (Interactive Modal Trigger) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group cursor-pointer" onclick="openImageModal()">
+                        <!-- Album Box Cover Effect -->
+                        <div class="w-72 h-80 sm:w-80 sm:h-96 album-border bg-gray-900 overflow-hidden relative flex items-center justify-center">
+                            <img src="eliah_image.png" alt="Eliah Calumpong" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition duration-500">
+                            
+                            <div class="absolute inset-0 bg-yellow-400/10 group-hover:bg-transparent transition"></div>
+                            
+                            <!-- Click Hint Badge -->
+                            <div class="absolute bottom-3 bg-black/80 text-yellow-400 border border-yellow-400 px-3 py-1 font-mono text-xs">
+                                🔍 CLICK TO ZOOM [DEV MODE]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS / TRACKLIST SECTION -->
+        <section id="projects" class="pt-10">
+            <div class="border-b-4 border-yellow-400 pb-2 mb-8 flex justify-between items-end">
+                <h2 class="text-4xl font-eheads text-yellow-400 tracking-wider">
+                    SIDE A: PROJECT TRACKLIST
+                </h2>
+                <span class="font-mono text-red-400 text-sm font-bold">RELEASED 2025</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Activity 1 -->
+                <div class="album-card p-5 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-red-600 text-white font-mono text-xs px-2 py-1 uppercase font-bold">Track 01</span>
+                        <h3 class="text-2xl font-eheads text-white mt-3 mb-1">MY RESUME</h3>
+                        <p class="text-gray-400 text-sm font-sans mb-4">Interactive digital resume highlighting background & skillset.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-mono text-yellow-400 mb-2">TECH: HTML5 / CSS</p>
+                        <a href="https://liarazon17-tech.github.io/Resume/" target="_blank" class="text-red-400 font-eheads text-lg hover:text-yellow-400 transition flex items-center gap-1">
+                            PLAY TRACK →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="album-card p-5 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-yellow-400 text-black font-mono text-xs px-2 py-1 uppercase font-bold">Track 02</span>
+                        <h3 class="text-2xl font-eheads text-white mt-3 mb-1">MULTIPLICATION TABLE</h3>
+                        <p class="text-gray-400 text-sm font-sans mb-4">Clean dynamic mathematical grid generated using HTML.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-mono text-yellow-400 mb-2">TECH: HTML5 / Logic</p>
+                        <a href="https://github.com/liarazon17-tech/Multiplication-Table" target="_blank" class="text-red-400 font-eheads text-lg hover:text-yellow-400 transition flex items-center gap-1">
+                            PLAY TRACK →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="album-card p-5 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-yellow-400 text-black font-mono text-xs px-2 py-1 uppercase font-bold">Track 03</span>
+                        <h3 class="text-2xl font-eheads text-white mt-3 mb-1">PCU ENROLLMENT FORM</h3>
+                        <p class="text-gray-400 text-sm font-sans mb-4">Structured portal UI built for PCU registration system.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-mono text-yellow-400 mb-2">TECH: HTML / Responsive</p>
+                        <a href="https://github.com/liarazon17-tech/Enrollment" target="_blank" class="text-red-400 font-eheads text-lg hover:text-yellow-400 transition flex items-center gap-1">
+                            PLAY TRACK →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="album-card p-5 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-yellow-400 text-black font-mono text-xs px-2 py-1 uppercase font-bold">Track 04</span>
+                        <h3 class="text-2xl font-eheads text-white mt-3 mb-1">BIRTH CALENDAR</h3>
+                        <p class="text-gray-400 text-sm font-sans mb-4">Personalized month calendar layout crafted in code.</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-mono text-yellow-400 mb-2">TECH: HTML5</p>
+                        <a href="https://github.com/liarazon17-tech/Birth-Calendar" target="_blank" class="text-red-400 font-eheads text-lg hover:text-yellow-400 transition flex items-center gap-1">
+                            PLAY TRACK →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS & CREDITS SECTION -->
+        <section id="skills" class="pt-10">
+            <h2 class="text-4xl font-eheads text-yellow-400 border-b-4 border-yellow-400 pb-2 mb-8">
+                SIDE B: TECH STACK & CREDITS
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="bg-black border-2 border-yellow-400 p-6 shadow-[6px_6px_0px_#ef4444]">
+                    <h3 class="text-2xl font-eheads text-white mb-4">INSTRUMENTS (TECH STACK)</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">HTML5</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">CSS3 / Tailwind</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">JavaScript (ES6+)</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">Node.js / Express</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">Git & GitHub</span>
+                    </div>
+                </div>
+
+                <div class="bg-black border-2 border-yellow-400 p-6 shadow-[6px_6px_0px_#fff]">
+                    <h3 class="text-2xl font-eheads text-white mb-4">AWARDS & RECOGNITION</h3>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li class="flex items-center text-gray-200">
+                            <span class="text-yellow-400 text-lg mr-2">★</span> 1st Year Outstanding Dean's Lister
+                        </li>
+                        <li class="flex items-center text-gray-200">
+                            <span class="text-yellow-400 text-lg mr-2">★</span> 2nd Year Outstanding Dean's Lister
+                        </li>
+                        <li class="flex items-center text-gray-200">
+                            <span class="text-yellow-400 text-lg mr-2">★</span> Philippine Christian University
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact-info" class="pt-10">
+            <div class="bg-yellow-400 text-black p-8 border-4 border-white shadow-[8px_8px_0px_#ef4444] text-center max-w-2xl mx-auto">
+                <h2 class="text-4xl font-eheads mb-2">BOOKings & INQUIRIES</h2>
+                <p class="font-sans font-semibold mb-6">Open for collaboration, web projects, and internships.</p>
+                
+                <div class="space-y-3 font-mono">
+                    <div>
+                        <p class="text-xs uppercase font-bold text-gray-800">EMAIL ADDRESS</p>
+                        <a href="mailto:eliah.calumpong.coi@pcu.edu.ph" class="text-xl sm:text-2xl font-bold hover:text-white transition">
+                            eliah.calumpong.coi@pcu.edu.ph
+                        </a>
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase font-bold text-gray-800">HOTLINE</p>
+                        <p class="text-2xl font-bold">09611234566</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black border-t-2 border-yellow-400 py-8 mt-20 text-center">
+        <a href="https://github.com/liarazon17-tech" target="_blank" class="font-eheads text-yellow-400 text-xl hover:text-white transition">GITHUB PROFILE</a>
+        <p class="text-xs font-mono text-gray-500 mt-4">
+            &copy; 2025 Eliah Angelica S. Calumpong (<span class="mirror-e">E</span>L BIMBO). Inspired by Eraserheads.
+        </p>
+    </footer>
+
+    <!-- DEVELOPER PHOTO MODAL (LALAKI ANG PICTURE KAPAG KINLICK) -->
+    <div id="photo-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeImageModal()">
+        <div class="relative max-w-lg w-full bg-gray-900 border-4 border-yellow-400 p-2 shadow-[0_0_30px_rgba(250,204,21,0.5)]" onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center bg-yellow-400 text-black px-3 py-1 mb-2 font-mono text-xs font-bold">
+                <span>DEV_MODE // PROFILE_INSPECT.JPG</span>
+                <button onclick="closeImageModal()" class="text-lg hover:text-red-600 font-bold">✕</button>
+            </div>
+            <!-- Expanded Image -->
+            <div class="w-full h-auto overflow-hidden border border-gray-700">
+                <img src="eliah_image.png" alt="Eliah Calumpong Large" class="w-full h-auto object-cover">
+            </div>
+            <!-- Developer Info Overlay -->
+            <div class="p-3 font-mono text-xs text-yellow-400 space-y-1">
+                <p>&gt; STATUS: 200 OK</p>
+                <p>&gt; ALIAS: EL BIMBO</p>
+                <p class="text-gray-400">&gt; Click outside to close window</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Developer Photo Modal Controls
+        function openImageModal() {
+            document.getElementById('photo-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('photo-modal').classList.add('hidden');
+        }
+
+        // Music Player Simulation
+        let isPlaying = false;
+        function togglePlay() {
+            const btn = document.getElementById('play-btn');
+            const status = document.getElementById('player-status');
+            const bar = document.getElementById('progress-bar');
+
+            isPlaying = !isPlaying;
+
+            if (isPlaying) {
+                btn.innerText = "❚❚ PAUSE";
+                btn.classList.replace('bg-yellow-400', 'bg-red-500');
+                btn.classList.add('text-white');
+                status.innerHTML = "<span>🔊</span> PLAYING: Track 01 - Portfolio.exe";
+                bar.classList.add('playing-bar');
+            } else {
+                btn.innerText = "▶ PLAY ALBUM";
+                btn.classList.replace('bg-red-500', 'bg-yellow-400');
+                btn.classList.remove('text-white');
+                status.innerHTML = "<span>▶</span> PAUSED: Track 01 - Portfolio.exe";
+                bar.classList.remove('playing-bar');
+            }
+        }
+    </script>
+</body>
+</html>
