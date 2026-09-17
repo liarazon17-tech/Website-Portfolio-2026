@@ -689,6 +689,10 @@
                 return "Nagtapos si Eliah ng Senior High School sa <b>Nemesio I. Yabut Senior High School</b> (Escuela St., Brgy. Guadalupe Nuevo, Makati City) noong Academic Year 2021 - 2023.";
             }
 
+            if (query.includes('misis') || query.includes('asawa') || query.includes('gf') || query.includes('girlfriend') || query.includes('baby')) {
+                return "anj";
+            }
+
             if (query.includes('year') || query.includes('anong year') || query.includes('status') || query.includes('graduating') || query.includes('4th year')) {
                 return "Si Eliah ay kasalukuyang <b>4th Year BSIT Student</b> sa Philippine Christian University (PCU).";
             }
@@ -742,6 +746,46 @@
             // Default Fallback Response
             return "Puwede mo akong tanungin tungkol sa:<br>• <b>Projects:</b> Portfolio, Voting System, Enrollment Form, Multiplication Table, Birth Calendar<br>• <b>Theme & Music:</b> Eraserheads, Ang Huling El Bimbo audio<br>• <b>Education:</b> PCU, Nemesio I. Yabut SHS, Pitogo HS<br>• <b>Skills & Awards:</b> Tech Stack, Dean's Lister honors<br>• <b>Contact Details & References</b>";
         }
+// CURSOR MUSIC NOTES TRAIL EFFECT
+document.addEventListener('mousemove', function(e) {
+    // Limitahan ang frequency ng paglabas ng notes para hindi masyadong madami
+    if (Math.random() > 0.3) return;
+
+    const note = document.createElement('span');
+    const notes = ['🎶', '🎵', '🎼', '♩'];
+    
+    // Pumili ng random note symbol
+    note.innerText = notes[Math.floor(Math.random() * notes.length)];
+    
+    // Styling para sa yellow glowing floating note
+    note.style.position = 'fixed';
+    note.style.left = e.clientX + 'px';
+    note.style.top = e.clientY + 'px';
+    note.style.color = '#facc15'; // Tailwind Yellow-400
+    note.style.fontSize = (Math.random() * 12 + 12) + 'px'; // Random size (12px - 24px)
+    note.style.pointerEvents = 'none'; // Para hindi nakakaharang sa click
+    note.style.zIndex = '9999';
+    note.style.textShadow = '0 0 8px rgba(250, 204, 21, 0.8)';
+    note.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+    note.style.opacity = '1';
+    
+    document.body.appendChild(note);
+
+    // Random movement animation (aangat nang kaunti paitaas at pagilid)
+    const randomX = (Math.random() - 0.5) * 40;
+    const randomY = - (Math.random() * 50 + 20);
+
+    setTimeout(() => {
+        note.style.transform = `translate(${randomX}px, ${randomY}px) scale(1.3)`;
+        note.style.opacity = '0';
+    }, 50);
+
+    // Tanggalin ang element pagkatapos ng animation para hindi bumigat ang memory
+    setTimeout(() => {
+        note.remove();
+    }, 1050);
+});
+
     </script>
 </body>
 </html>
