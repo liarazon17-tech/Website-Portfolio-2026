@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    
     <title>Eliah Angelica S. Calumpong | Web Developer Portfolio</title>
     <meta name="description" content="Official portfolio of Eliah Angelica S. Calumpong, a Web Developer showcasing projects, skills, and experience.">
  
-<meta name="google-site-verification" content="rUCGLL_jEW_dPC0rJYKjieHRBxCGNC97dGKETgcgTP0" />
+    <meta name="google-site-verification" content="rUCGLL_jEW_dPC0rJYKjieHRBxCGNC97dGKETgcgTP0" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
@@ -274,51 +274,71 @@
                 SIDE B: TECH STACK & ARTIST AWARDS
             </h2>
 
-           <div class="mb-8 flex justify-center">
-    <div class="bg-black border-2 border-yellow-400 p-6 shadow-[6px_6px_0px_#ef4444] max-w-2xl w-full text-center">
-        <h3 class="text-2xl font-eheads text-white mb-4">INSTRUMENTS (TECH STACK)</h3>
-        <div class="flex flex-wrap justify-center gap-2">
-            <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">HTML5</span>
-            <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">CSS</span>
-            <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">UI/UX Designer</span>
-            <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">Basic SQL & Data Handling</span>
-            <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">Git & GitHub</span>
-        </div>
-    </div>
-</div>
-
-<div class="border-t-2 border-yellow-400/40 pt-6">
-    <h3 class="text-3xl font-eheads text-yellow-400 mb-6">🏆 ARTIST ACADEMIC AWARDS</h3>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-zinc-900 border-2 border-yellow-400 p-4 shadow-[4px_4px_0px_#ef4444]">
-            <div class="w-full h-40 bg-zinc-800 border border-gray-700 mb-3 overflow-hidden relative group">
-                <img src="first.jpg" onerror="this.src='eliah.jpg'" alt="Award 1" class="w-full h-full object-cover group-hover:scale-105 transition">
-                <span class="absolute top-2 left-2 bg-yellow-400 text-black text-xs font-mono font-bold px-2 py-0.5">GOLD TRACK</span>
+            <div class="mb-8 flex justify-center">
+                <div class="bg-black border-2 border-yellow-400 p-6 shadow-[6px_6px_0px_#ef4444] max-w-2xl w-full text-center">
+                    <h3 class="text-2xl font-eheads text-white mb-4">INSTRUMENTS (TECH STACK)</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">HTML5</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">CSS</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">UI/UX Designer</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">Basic SQL & Data Handling</span>
+                        <span class="bg-yellow-400 text-black font-mono text-sm px-3 py-1 font-bold">Git & GitHub</span>
+                    </div>
+                </div>
             </div>
-            <h4 class="font-eheads text-xl text-white">DEAN'S LISTER - 1st YEAR</h4>
-            <p class="text-xs font-mono text-red-400">PCU Academic Honors</p>
-        </div>
 
-        <div class="bg-zinc-900 border-2 border-yellow-400 p-4 shadow-[4px_4px_0px_#ef4444]">
-            <div class="w-full h-40 bg-zinc-800 border border-gray-700 mb-3 overflow-hidden relative group">
-                <img src="second.jpg" onerror="this.src='eliah.jpg'" alt="Award 2" class="w-full h-full object-cover group-hover:scale-105 transition">
-                <span class="absolute top-2 left-2 bg-yellow-400 text-black text-xs font-mono font-bold px-2 py-0.5">PLATINUM TRACK</span>
-            </div>
-            <h4 class="font-eheads text-xl text-white">DEAN'S LISTER - 2nd YEAR</h4>
-            <p class="text-xs font-mono text-red-400">PCU Academic Honors</p>
-        </div>
+            <!-- AWARDS SECTION WITH ZOOM CLICK -->
+            <div class="border-t-2 border-yellow-400/40 pt-6">
+                <h3 class="text-3xl font-eheads text-yellow-400 mb-6">🏆 ARTIST ACADEMIC AWARDS</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Award 1 -->
+                    <div class="bg-zinc-900 border-2 border-yellow-400 p-4 shadow-[4px_4px_0px_#ef4444]">
+                        <div class="w-full h-40 bg-zinc-800 border border-gray-700 mb-3 overflow-hidden relative group cursor-pointer" onclick="openAwardModal('first.jpg')">
+                            <img src="first.jpg" onerror="this.src='eliah.jpg'" alt="Award 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-2 left-2 bg-yellow-400 text-black text-xs font-mono font-bold px-2 py-0.5 z-10">GOLD TRACK</span>
+                            
+                            <!-- Hover Zoom Overlay Indicator -->
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-yellow-400 font-bold font-mono text-xs">
+                                🔍 CLICK TO ZOOM
+                            </div>
+                        </div>
+                        <h4 class="font-eheads text-xl text-white">DEAN'S LISTER - 1st YEAR</h4>
+                        <p class="text-xs font-mono text-red-400">PCU Academic Honors</p>
+                    </div>
 
-        <div class="bg-zinc-900 border-2 border-yellow-400 p-4 shadow-[4px_4px_0px_#ef4444]">
-            <div class="w-full h-40 bg-zinc-800 border border-gray-700 mb-3 overflow-hidden relative group">
-                <img src="third.jpg" onerror="this.src='eliah.jpg'" alt="Cert" class="w-full h-full object-cover group-hover:scale-105 transition">
-                <span class="absolute top-2 left-2 bg-yellow-400 text-black text-xs font-mono font-bold px-2 py-0.5">CERTIFIED</span>
+                    <!-- Award 2 -->
+                    <div class="bg-zinc-900 border-2 border-yellow-400 p-4 shadow-[4px_4px_0px_#ef4444]">
+                        <div class="w-full h-40 bg-zinc-800 border border-gray-700 mb-3 overflow-hidden relative group cursor-pointer" onclick="openAwardModal('second.jpg')">
+                            <img src="second.jpg" onerror="this.src='eliah.jpg'" alt="Award 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-2 left-2 bg-yellow-400 text-black text-xs font-mono font-bold px-2 py-0.5 z-10">PLATINUM TRACK</span>
+                            
+                            <!-- Hover Zoom Overlay Indicator -->
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-yellow-400 font-bold font-mono text-xs">
+                                🔍 CLICK TO ZOOM
+                            </div>
+                        </div>
+                        <h4 class="font-eheads text-xl text-white">DEAN'S LISTER - 2nd YEAR</h4>
+                        <p class="text-xs font-mono text-red-400">PCU Academic Honors</p>
+                    </div>
+
+                    <!-- Award 3 -->
+                    <div class="bg-zinc-900 border-2 border-yellow-400 p-4 shadow-[4px_4px_0px_#ef4444]">
+                        <div class="w-full h-40 bg-zinc-800 border border-gray-700 mb-3 overflow-hidden relative group cursor-pointer" onclick="openAwardModal('third.jpg')">
+                            <img src="third.jpg" onerror="this.src='eliah.jpg'" alt="Cert" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-2 left-2 bg-yellow-400 text-black text-xs font-mono font-bold px-2 py-0.5 z-10">CERTIFIED</span>
+                            
+                            <!-- Hover Zoom Overlay Indicator -->
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-yellow-400 font-bold font-mono text-xs">
+                                🔍 CLICK TO ZOOM
+                            </div>
+                        </div>
+                        <h4 class="font-eheads text-xl text-white">DEAN'S LISTER - 3RD YEAR</h4>
+                        <p class="text-xs font-mono text-red-400">PCU Academic Honors</p>
+                    </div>
+                </div>
             </div>
-            <h4 class="font-eheads text-xl text-white">DEAN'S LISTER - 3RD YEAR</h4>
-            <p class="text-xs font-mono text-red-400">PCU Academic Honors</p>
-        </div>
-    </div>
-</div>
+
             <!-- Page Navigation Buttons -->
             <div class="flex justify-between items-center mt-10 pt-6 border-t border-zinc-800">
                 <button onclick="switchTab('projects')" class="px-4 py-2 bg-zinc-800 text-yellow-400 font-eheads hover:bg-yellow-400 hover:text-black transition border border-yellow-400">
@@ -403,151 +423,219 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC WITH AUTOMATIC PAGE CONTENT SCRAPER & UPDATED CHATBOT LOGIC -->
-    <script>
-       // TAB SWITCHING FUNCTIONALITY
-function switchTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    const targetTab = document.getElementById(tabId);
-    if (targetTab) {
-        targetTab.classList.add('active');
-    }
-
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        if (btn.id === `nav-${tabId}`) {
-            btn.classList.add('bg-yellow-400', 'text-black', 'font-bold');
-            btn.classList.remove('text-gray-300');
-        } else if (btn.id !== 'nav-contact-info') {
-            btn.classList.remove('bg-yellow-400', 'text-black', 'font-bold');
-            btn.classList.add('text-gray-300');
-        }
-    });
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// IMAGE MODAL LOGIC
-function openImageModal() {
-    document.getElementById('photo-modal').classList.remove('hidden');
-}
-
-function closeImageModal() {
-    document.getElementById('photo-modal').classList.add('hidden');
-}
-
-// AUDIO PLAYER LOGIC
-const audio = document.getElementById('bg-music');
-const playBtn = document.getElementById('play-btn');
-const statusText = document.getElementById('player-status');
-const progressBar = document.getElementById('progress-bar');
-const timeDisplay = document.getElementById('time-display');
-const heroVinyl = document.getElementById('hero-vinyl');
-const headerVinyl = document.getElementById('header-vinyl');
-
-const SONG_DURATION_DISPLAY = "5:30";
-
-function togglePlay() {
-    if (audio.paused) {
-        audio.play().then(() => {
-            playBtn.innerText = "❚❚ PAUSE";
-            playBtn.classList.replace('bg-yellow-400', 'bg-red-500');
-            playBtn.classList.add('text-white');
-            statusText.innerHTML = "<span>🔊</span> PLAYING: Ang Huling El Bimbo - Eraserheads";
-            
-            heroVinyl.classList.remove('vinyl-paused');
-            headerVinyl.classList.remove('vinyl-paused');
-        }).catch(error => {
-            alert("Siguraduhing 'elbimbo.mp3.mp3' ang pangalan ng MP3 file sa folder mo!");
-        });
-    } else {
-        audio.pause();
-        playBtn.innerText = "▶ PLAY ALBUM";
-        playBtn.classList.replace('bg-red-500', 'bg-yellow-400');
-        playBtn.classList.remove('text-white');
-        statusText.innerHTML = "<span>▶</span> PAUSED: Ang Huling El Bimbo";
-        
-        heroVinyl.classList.add('vinyl-paused');
-        headerVinyl.classList.add('vinyl-paused');
-    }
-}
-
-function seekAudio(e) {
-    const progressContainer = document.getElementById('progress-container');
-    const width = progressContainer.clientWidth;
-    const clickX = e.offsetX;
-    const duration = audio.duration;
-
-    if (duration) {
-        audio.currentTime = (clickX / width) * duration;
-        if (audio.paused) {
-            togglePlay();
-        }
-    }
-}
-
-audio.addEventListener('timeupdate', () => {
-    if(audio.duration) {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.style.width = `${progress}%`;
-
-        const min = Math.floor(audio.currentTime / 60);
-        const sec = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
-        timeDisplay.innerText = `${min}:${sec} / ${SONG_DURATION_DISPLAY}`;
-    }
-});
-
-audio.addEventListener('ended', () => {
-    playBtn.innerText = "▶ PLAY ALBUM";
-    playBtn.classList.replace('bg-red-500', 'bg-yellow-400');
-    playBtn.classList.remove('text-white');
-    statusText.innerHTML = "<span>▶</span> FINISHED: Ang Huling El Bimbo";
-    progressBar.style.width = "0%";
-    
-    heroVinyl.classList.add('vinyl-paused');
-    headerVinyl.classList.add('vinyl-paused');
-});
-
-// CHATBOT WIDGET TOGGLE
-function toggleChat() {
-    const chatBox = document.getElementById('chat-box');
-    chatBox.classList.toggle('hidden');
-}
-
-function handleChatSubmit(e) {
-    e.preventDefault();
-    const input = document.getElementById('chat-input');
-    const query = input.value.trim().toLowerCase();
-    if (!query) return;
-
-    const chatMessages = document.getElementById('chat-messages');
-    chatMessages.innerHTML += `
-        <div class="bg-red-950 border border-red-500 p-2 rounded text-red-200 text-right">
-            ${input.value}
-        </div>
-    `;
-
-    input.value = '';
-
-    setTimeout(() => {
-        let botResponse = getAIResponse(query);
-        chatMessages.innerHTML += `
-            <div class="bg-zinc-800 border border-yellow-400 p-2 rounded text-yellow-300">
-                ${botResponse}
+    <!-- DYNAMIC AWARD PHOTO MODAL (FOR ZOOMING AWARDS) -->
+    <div id="award-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeAwardModal()">
+        <div class="relative max-w-3xl w-full bg-gray-900 border-4 border-yellow-400 p-2 shadow-[0_0_30px_rgba(250,204,21,0.5)]" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center bg-yellow-400 text-black px-3 py-1 mb-2 font-mono text-xs font-bold">
+                <span>ACADEMIC AWARD PREVIEW</span>
+                <button onclick="closeAwardModal()" class="text-lg hover:text-red-600 font-bold">✕</button>
             </div>
-        `;
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 400);
-}
+            <div class="w-full h-auto max-h-[80vh] overflow-hidden border border-gray-700 flex items-center justify-center bg-black">
+                <img id="award-modal-img" src="" alt="Award Large View" class="max-w-full max-h-[75vh] object-contain">
+            </div>
+        </div>
+    </div>
 
-// KNOWLEDGE BASE AT RESPONSE GENERATOR NG EL BIMBOT
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // TAB SWITCHING FUNCTIONALITY
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            const targetTab = document.getElementById(tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if (btn.id === `nav-${tabId}`) {
+                    btn.classList.add('bg-yellow-400', 'text-black', 'font-bold');
+                    btn.classList.remove('text-gray-300');
+                } else if (btn.id !== 'nav-contact-info') {
+                    btn.classList.remove('bg-yellow-400', 'text-black', 'font-bold');
+                    btn.classList.add('text-gray-300');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PROFILE IMAGE MODAL LOGIC
+        function openImageModal() {
+            document.getElementById('photo-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('photo-modal').classList.add('hidden');
+        }
+
+        // AWARD IMAGE MODAL LOGIC (DYNAMIC ZOOM)
+        function openAwardModal(imageSrc) {
+            const modal = document.getElementById('award-modal');
+            const modalImg = document.getElementById('award-modal-img');
+            
+            modalImg.src = imageSrc;
+            modalImg.onerror = function() {
+                this.src = 'eliah.jpg';
+            };
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeAwardModal() {
+            document.getElementById('award-modal').classList.add('hidden');
+        }
+
+        // AUDIO PLAYER LOGIC
+        const audio = document.getElementById('bg-music');
+        const playBtn = document.getElementById('play-btn');
+        const statusText = document.getElementById('player-status');
+        const progressBar = document.getElementById('progress-bar');
+        const timeDisplay = document.getElementById('time-display');
+        const heroVinyl = document.getElementById('hero-vinyl');
+        const headerVinyl = document.getElementById('header-vinyl');
+
+        const SONG_DURATION_DISPLAY = "5:30";
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playBtn.innerText = "❚❚ PAUSE";
+                    playBtn.classList.replace('bg-yellow-400', 'bg-red-500');
+                    playBtn.classList.add('text-white');
+                    statusText.innerHTML = "<span>🔊</span> PLAYING: Ang Huling El Bimbo - Eraserheads";
+                    
+                    heroVinyl.classList.remove('vinyl-paused');
+                    headerVinyl.classList.remove('vinyl-paused');
+                }).catch(error => {
+                    alert("Siguraduhing 'elbimbo.mp3.mp3' ang pangalan ng MP3 file sa folder mo!");
+                });
+            } else {
+                audio.pause();
+                playBtn.innerText = "▶ PLAY ALBUM";
+                playBtn.classList.replace('bg-red-500', 'bg-yellow-400');
+                playBtn.classList.remove('text-white');
+                statusText.innerHTML = "<span>▶</span> PAUSED: Ang Huling El Bimbo";
+                
+                heroVinyl.classList.add('vinyl-paused');
+                headerVinyl.classList.add('vinyl-paused');
+            }
+        }
+
+        function seekAudio(e) {
+            const progressContainer = document.getElementById('progress-container');
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+
+            if (duration) {
+                audio.currentTime = (clickX / width) * duration;
+                if (audio.paused) {
+                    togglePlay();
+                }
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if(audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+
+                const min = Math.floor(audio.currentTime / 60);
+                const sec = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+                timeDisplay.innerText = `${min}:${sec} / ${SONG_DURATION_DISPLAY}`;
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            playBtn.innerText = "▶ PLAY ALBUM";
+            playBtn.classList.replace('bg-red-500', 'bg-yellow-400');
+            playBtn.classList.remove('text-white');
+            statusText.innerHTML = "<span>▶</span> FINISHED: Ang Huling El Bimbo";
+            progressBar.style.width = "0%";
+            
+            heroVinyl.classList.add('vinyl-paused');
+            headerVinyl.classList.add('vinyl-paused');
+        });
+
+        // CHATBOT WIDGET TOGGLE
+        function toggleChat() {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.classList.toggle('hidden');
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chat-input');
+            const query = input.value.trim().toLowerCase();
+            if (!query) return;
+
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML += `
+                <div class="bg-red-950 border border-red-500 p-2 rounded text-red-200 text-right">
+                    ${input.value}
+                </div>
+            `;
+
+            input.value = '';
+
+            setTimeout(() => {
+                let botResponse = getAIResponse(query);
+                chatMessages.innerHTML += `
+                    <div class="bg-zinc-800 border border-yellow-400 p-2 rounded text-yellow-300">
+                        ${botResponse}
+                    </div>
+                `;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 400);
+        }
+
+        // KNOWLEDGE BASE AT RESPONSE GENERATOR NG EL BIMBOT
         function getAIResponse(query) {
-            // Theme / Music Player Info (ADDED)
+
+            if (query.includes('resume') || query.includes('cv')) {
+        return "<b>Eliah's Resume / CV:</b><br><br>" +
+            "• Tingnan ang buong resume at qualifications ni Eliah dito:<br>" +
+            "👉 <a href='https://liarazon17-tech.github.io/Updated-Resume/' target='_blank' class='text-yellow-400 underline font-bold hover:text-white'>Open Resume / CV Track</a>";
+    }
+
+    // Birth Calendar Link
+    if (query.includes('birth') || query.includes('calendar') || query.includes('february')) {
+        return "<b>Birth Calendar (February 2025):</b><br><br>" +
+            "• Interactive February 2025 birth month grid layout (HTML5):<br>" +
+            "👉 <a href='https://liarazon17-tech.github.io/Birth---Calendar/' target='_blank' class='text-yellow-400 underline font-bold hover:text-white'>Open Birth Calendar Track</a>";
+    }
+
+    // Multiplication Table Link
+    if (query.includes('multiplication') || query.includes('table')) {
+        return "<b>Multiplication Table (1-5):</b><br><br>" +
+            "• Interactive mathematical grid layout gamit ang HTML5 & Logic:<br>" +
+            "👉 <a href='https://liarazon17-tech.github.io/Multiplication-Table/' target='_blank' class='text-yellow-400 underline font-bold hover:text-white'>Open Multiplication Table Track</a>";
+    }
+
+    // PCU Enrollment Form Link
+    if (query.includes('enrollment') || query.includes('form')) {
+        return "<b>PCU Enrollment Form Portal:</b><br><br>" +
+            "• Structured portal UI para sa PCU student registration system:<br>" +
+            "👉 <a href='https://liarazon17-tech.github.io/Enrollment/' target='_blank' class='text-yellow-400 underline font-bold hover:text-white'>Open PCU Enrollment Form Track</a>";
+    }
+
+    // All Projects / Tracks Links
+    if (query.includes('project') || query.includes('gawa') || query.includes('portfolio') || query.includes('tracks') || query.includes('work') || query.includes('github')) {
+        return "<b>Mga Proyekto at Live Links ni Eliah (2025):</b><br><br>" +
+            "1. 📄 <b>Resume:</b> <a href='https://liarazon17-tech.github.io/Updated-Resume/' target='_blank' class='text-yellow-400 underline'>View Resume</a><br>" +
+            "2. 📅 <b>Birth Calendar:</b> <a href='https://liarazon17-tech.github.io/Birth---Calendar/' target='_blank' class='text-yellow-400 underline'>View Calendar</a><br>" +
+            "3. ✖️ <b>Multiplication Table:</b> <a href='https://liarazon17-tech.github.io/Multiplication-Table/' target='_blank' class='text-yellow-400 underline'>View Table</a><br>" +
+            "4. 📝 <b>PCU Enrollment Form:</b> <a href='https://liarazon17-tech.github.io/Enrollment/' target='_blank' class='text-yellow-400 underline'>View Form</a><br>" +
+            "5. 🗳️ <b>Voting System:</b> UI/UX Designer (Visual Studio)<br><br>" +
+            "💻 <b>GitHub Profile:</b> <a href='https://github.com/liarazon17-tech' target='_blank' class='text-yellow-400 underline font-bold'>github.com/liarazon17-tech</a>";
+    }
+            // Theme / Music Player Info
             if (query.includes('theme') || query.includes('inspired') || query.includes('design') || query.includes('concept') || query.includes('music') || query.includes('play') || query.includes('kanta') || query.includes('song') || query.includes('bimbo')) {
                 return "<b>Portfolio Theme & Music Player Info:</b><br><br>" +
-                    "• <b>Theme Inspiration:</b> Ang buong design at concept ng portfolio ay inspired sa iconic OPM band na <b>Eraserheads</b> at sa kanilang kantang <i>'Ang Huling El Bimbo'</i> na favorite ni.<br>" +
+                    "• <b>Theme Inspiration:</b> Ang buong design at concept ng portfolio ay inspired sa iconic OPM band na <b>Eraserheads</b> at sa kanilang kantang <i>'Ang Huling El Bimbo'</i>.<br>" +
                     "• <b>Playable Music:</b> Pwedeng i-play sa audio player ng site ang kantang <b>'Ang Huling El Bimbo' - Eraserheads</b> (gamit ang <i>elbimbo.mp3.mp3</i> file na may duration na 5:30). May interactive vinyl animation din ito kapag nag-play!";
             }
 
@@ -589,37 +677,35 @@ function handleChatSubmit(e) {
                 return "Ang <b>Birth Calendar</b> (2025) ay isang personalized calendar grid layout para sa February 2025 birth month na binuo gamit ang HTML5.";
             }
 
-          if (query.includes('junior high') || query.includes('high school') || query.includes('pitogo')) {
-    return "Sa <b>Pitogo High School</b> (Negros St., Brgy. Pitogo, Makati City) grumaduate si Eliah noong Junior High School siya (SY 2017 - 2021).";
-}
+            if (query.includes('junior high') || query.includes('high school') || query.includes('pitogo')) {
+                return "Sa <b>Pitogo High School</b> (Negros St., Brgy. Pitogo, Makati City) grumaduate si Eliah noong Junior High School siya (SY 2017 - 2021).";
+            }
 
-if (query.includes('tira') || query.includes('nakatira') || query.includes('address') || query.includes('lokasyon') || query.includes('location') || query.includes('makati')) {
-    return "Si Eliah ay kasalukuyang nakatira sa <b>Makati City, Philippines</b>.";
-}
+            if (query.includes('tira') || query.includes('nakatira') || query.includes('address') || query.includes('lokasyon') || query.includes('location') || query.includes('makati')) {
+                return "Si Eliah ay kasalukuyang nakatira sa <b>Makati City, Philippines</b>.";
+            }
 
-if (query.includes('senior high') || query.includes('shs') || query.includes('nemesio') || query.includes('yabut')) {
-    return "Nagtapos si Eliah ng Senior High School sa <b>Nemesio I. Yabut Senior High School</b> (Escuela St., Brgy. Guadalupe Nuevo, Makati City) noong Academic Year 2021 - 2023.";
-}
+            if (query.includes('senior high') || query.includes('shs') || query.includes('nemesio') || query.includes('senior') || query.includes('yabut')) {
+                return "Nagtapos si Eliah ng Senior High School sa <b>Nemesio I. Yabut Senior High School</b> (Escuela St., Brgy. Guadalupe Nuevo, Makati City) noong Academic Year 2021 - 2023.";
+            }
 
-if (query.includes('year') || query.includes('anong year') || query.includes('status') || query.includes('graduating') || query.includes('4th year')) {
-    return "Si Eliah ay kasalukuyang <b>4th Year BSIT Student</b> sa Philippine Christian University (PCU).";
-}
+            if (query.includes('year') || query.includes('anong year') || query.includes('status') || query.includes('graduating') || query.includes('4th year')) {
+                return "Si Eliah ay kasalukuyang <b>4th Year BSIT Student</b> sa Philippine Christian University (PCU).";
+            }
 
-if (query.includes('college') || query.includes('pcu') || query.includes('philippine christian university') || query.includes('university') || query.includes('kursoryo') || query.includes('course')) {
-    return "Kasalukuyang nag-aaral si Eliah sa <b>Philippine Christian University (PCU)</b> sa Malate, Manila sa kursong <b>Bachelor of Science in Information Technology (BSIT)</b>.";
-}
+            if (query.includes('college') || query.includes('pcu') || query.includes('philippine christian university') || query.includes('university') || query.includes('kursoryo') || query.includes('course')) {
+                return "Kasalukuyang nag-aaral si Eliah sa <b>Philippine Christian University (PCU)</b> sa Malate, Manila sa kursong <b>Bachelor of Science in Information Technology (BSIT)</b>.";
+            }
 
-// Nickname / Palayaw Query
-if (query.includes('nickname') || query.includes('palayaw') || query.includes('tawag') || query.includes('aliyah') || query.includes('el bimbo') || query.includes(' alias ')) {
-    return "Maaari mo siyang tawaging <b>El</b> o <b>El Bimbo</b>!";
-}
+            // Nickname / Palayaw Query
+            if (query.includes('nickname') || query.includes('palayaw') || query.includes('tawag') || query.includes('aliyah') || query.includes('el bimbo') || query.includes(' alias ')) {
+                return "Maaari mo siyang tawaging <b>El</b> o <b>El Bimbo</b>!";
+            }
 
-// Age / Edad Query
-if (query.includes('edad') || query.includes('age') || query.includes('ilang taon') || query.includes('taon ka na') || query.includes('22')) {
-    return "Si Eliah ay <b>22 taong gulang</b> na.";
-}
-
-
+            // Age / Edad Query
+            if (query.includes('edad') || query.includes('age') || query.includes('ilang taon') || query.includes('taon ka na') || query.includes('22')) {
+                return "Si Eliah ay <b>22 taong gulang</b> na.";
+            }
 
             // Education / School
             if (query.includes('education') || query.includes('school') || query.includes('aral') || query.includes('college') || query.includes('pcu')) {
